@@ -1,0 +1,1264 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070B14" />
+  <meta name="description" content="Portfólio profissional de Aldryn Esperança: Suporte de TI, Infra e Segurança da Informação (em evolução), UI/UX (Figma)." />
+
+  <title>Aldryn Esperança • Portfólio</title>
+
+  <style>
+    :root {
+      --bg0:#050812;
+      --bg1:#070B14;
+      --bg2:#0A1326;
+      --card:#0B1730;
+      --card2:#0C1A36;
+      --text:#EAF2FF;
+      --muted:#A7B7D8;
+      --muted2:#7F93BD;
+      --line: rgba(120,170,255,.14);
+      --line2: rgba(255,255,255,.08);
+      --blue:#4EA3FF;
+      --blue2:#2A6DFF;
+      --cyan:#48E7FF;
+      --green:#41F0A3;
+      --shadow: 0 22px 70px rgba(0,0,0,.50);
+      --shadow2: 0 14px 40px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1140px;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 12% 0%, rgba(78,163,255,.18), transparent 55%),
+        radial-gradient(900px 500px at 92% 12%, rgba(72,231,255,.12), transparent 60%),
+        radial-gradient(900px 650px at 50% 115%, rgba(42,109,255,.16), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg0) 70%);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    /* Top bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      background: rgba(7,11,20,.58);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.55), transparent 60%),
+        linear-gradient(135deg, rgba(78,163,255,.95), rgba(42,109,255,.95));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 14px 45px rgba(42,109,255,.20);
+      flex: 0 0 auto;
+    }
+    .brand-text b {
+      display: block;
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 12px;
+      margin-top: 2px;
+      line-height: 1.1;
+      max-width: 58ch;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav a {
+      color: var(--muted);
+      font-weight: 750;
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      transition: .18s ease;
+      letter-spacing: .1px;
+    }
+    .nav a:hover {
+      color: var(--text);
+      background: rgba(78,163,255,.10);
+      border-color: rgba(78,163,255,.20);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-weight: 850;
+      font-size: 13px;
+      border: 1px solid rgba(78,163,255,.30);
+      background: rgba(78,163,255,.10);
+      color: var(--text);
+      transition: transform .16s ease, background .2s ease, border .2s ease, filter .2s ease;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(78,163,255,.16);
+      border-color: rgba(78,163,255,.45);
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, rgba(78,163,255,.98), rgba(42,109,255,.98));
+      border-color: rgba(255,255,255,.14);
+      box-shadow: 0 18px 60px rgba(42,109,255,.20);
+    }
+    .btn.primary:hover { filter: brightness(1.03); }
+    .btn.ghost {
+      border-color: rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .btn.ghost:hover {
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.14);
+    }
+
+    .hamburger {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 52px 0 26px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(78,163,255,.25);
+      background: rgba(78,163,255,.10);
+      color: var(--muted);
+      font-weight: 780;
+      font-size: 13px;
+      width: fit-content;
+    }
+    .badge .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 99px;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(65,240,163,.12);
+    }
+    h1 {
+      margin: 14px 0 10px;
+      font-size: clamp(36px, 5vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.7px;
+    }
+    .grad {
+      background: linear-gradient(90deg, var(--text), rgba(78,163,255,.95), rgba(72,231,255,.95));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 66ch;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 14px;
+    }
+
+    .quick {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .q {
+      flex: 1 1 180px;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: 0 12px 36px rgba(0,0,0,.18);
+      min-width: 170px;
+    }
+    .q b {
+      display: block;
+      font-size: 16px;
+    }
+    .q span {
+      display: block;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 12px;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    .panel {
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(900px 520px at 10% 0%, rgba(78,163,255,.18), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .panel-inner {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: 100%;
+    }
+    .minihead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-weight: 850;
+      letter-spacing: .25px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    .pill {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(72,231,255,.25);
+      background: rgba(72,231,255,.10);
+      color: var(--text);
+      font-weight: 900;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .code {
+      position: relative;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(5,10,22,.58);
+      padding: 14px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: rgba(231,240,255,.92);
+      line-height: 1.6;
+      overflow: hidden;
+    }
+    .code:before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background:
+        radial-gradient(400px 140px at 15% 0%, rgba(78,163,255,.22), transparent 60%),
+        radial-gradient(300px 120px at 90% 35%, rgba(72,231,255,.12), transparent 62%);
+      pointer-events: none;
+    }
+    .code pre {
+      margin: 0;
+      position: relative;
+      white-space: pre-wrap;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 10px;
+    }
+    .info {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+    .ico {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(78,163,255,.28);
+      background: rgba(78,163,255,.10);
+      flex: 0 0 auto;
+    }
+    .info b { display: block; }
+    .info span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* Sections */
+    section { padding: 46px 0; }
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -.25px;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 650;
+      max-width: 74ch;
+      line-height: 1.6;
+    }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .grid2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: var(--shadow2);
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: radial-gradient(700px 220px at 0% 0%, rgba(78,163,255,.14), transparent 60%);
+      pointer-events: none;
+    }
+    .card > * { position: relative; }
+
+    .muted {
+      color: var(--muted);
+      font-weight: 650;
+    }
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 12px 0;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: rgba(231,240,255,.92);
+      font-weight: 750;
+      font-size: 12px;
+    }
+    .tag.blue {
+      border-color: rgba(78,163,255,.26);
+      background: rgba(78,163,255,.10);
+    }
+
+    .proj-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .proj-head b {
+      font-size: 16px;
+      display: block;
+    }
+    .proj-meta {
+      margin-top: 3px;
+      color: var(--muted);
+      font-weight: 750;
+      font-size: 12px;
+    }
+    .proj-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+    .t {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .when {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: rgba(231,240,255,.88);
+      padding-top: 2px;
+    }
+    .what b { display: block; }
+    .what span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-weight: 650;
+      line-height: 1.55;
+    }
+
+    /* Contact */
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    form {
+      display: grid;
+      gap: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(5,10,22,.58);
+      color: var(--text);
+      outline: none;
+      font-weight: 650;
+      font-size: 14px;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    input:focus, textarea:focus {
+      border-color: rgba(78,163,255,.40);
+      box-shadow: 0 0 0 4px rgba(78,163,255,.12);
+    }
+
+    /* Footer */
+    footer {
+      padding: 28px 0 38px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .f-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .f-links a {
+      color: var(--muted);
+      font-weight: 750;
+    }
+    .f-links a:hover { color: var(--text); }
+
+
+    /* Extra responsive (agency-safe) */
+    @media (max-width: 640px) {
+      .container { padding: 0 14px; }
+      .topbar-inner { height: auto; padding: 12px 0; flex-wrap: wrap; }
+      .brand { min-width: 0; max-width: 100%; }
+      .brand-text { min-width: 0; }
+      .brand-text b { font-size: 14px; }
+      .brand-text span { 
+        max-width: 100%;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        line-height: 1.35;
+      }
+
+      .actions { width: 100%; justify-content: flex-end; flex-wrap: wrap; }
+      .btn { padding: 10px 12px; font-size: 12px; border-radius: 12px; }
+      .btn.primary { width: 100%; }
+
+      .hero { padding: 32px 0 18px; }
+      h1 { font-size: clamp(28px, 8vw, 40px); }
+      .subtitle { font-size: 14px; }
+      .badge { font-size: 12px; padding: 9px 10px; }
+
+      .hero-actions { gap: 8px; }
+      .hero-actions .btn { flex: 1 1 auto; }
+      .hero-actions .btn.primary { flex: 1 1 100%; }
+
+      .quick { gap: 10px; }
+      .q { min-width: 100%; }
+      .panel-inner { padding: 14px; }
+      .code { font-size: 11px; }
+
+      section { padding: 34px 0; }
+      .section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .section-head p { max-width: 100%; }
+
+      .proj-actions .btn { flex: 1 1 auto; }
+      .proj-actions .btn.primary { flex: 1 1 100%; }
+
+      .footer-inner { gap: 10px; }
+    }
+
+    @media (max-width: 380px) {
+      .brand-mark { width: 34px; height: 34px; border-radius: 12px; }
+      .btn { width: 100%; }
+      .actions { justify-content: stretch; }
+    }
+
+    /* Mobile */
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 920px) {
+      .nav { display: none; }
+      .hamburger { display: inline-flex; align-items:center; justify-content:center; }
+      .grid3 { grid-template-columns: 1fr; }
+      .grid2 { grid-template-columns: 1fr; }
+      .contact { grid-template-columns: 1fr; }
+      .t { grid-template-columns: 1fr; }
+      .brand-text span { max-width: 40ch; }
+    }
+
+    /* Mobile menu */
+    .mobile {
+      display: none;
+      border-top: 1px solid var(--line);
+      background: rgba(7,11,20,.75);
+    }
+    .mobile-inner {
+      padding: 12px 20px 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(10px); transition: .7s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(10,18,36,.92);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 14px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      display: none;
+      max-width: min(560px, calc(100vw - 24px));
+      font-weight: 750;
+      line-height: 1.4;
+    }
+
+    /* Print-safe */
+    @media print {
+      .topbar, .toast { display: none !important; }
+      body { background: white; color: black; }
+      .card, .panel, .q { box-shadow: none; }
+      a { text-decoration: underline; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="Ir para o topo">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <b>Aldryn Esperança</b>
+          <span>Suporte de TI • Infraestrutura • Segurança da Informação (em evolução) • UI/UX (Figma)</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação">
+        <a href="#sobre">Sobre</a>
+        <a href="#skills">Competências</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="actions">
+        <button class="btn ghost hamburger" id="menuBtn" type="button" aria-label="Abrir menu">☰</button>
+        <button class="btn ghost" id="copyEmailBtn" type="button" aria-label="Copiar e-mail">Copiar e-mail</button>
+        <a class="btn primary" href="https://www.linkedin.com/in/aldryn-esperan%C3%A7a-4b6353341/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile" id="mobileMenu" aria-label="Menu mobile">
+      <div class="container mobile-inner">
+        <a class="btn" href="#sobre">Sobre</a>
+        <a class="btn" href="#skills">Competências</a>
+        <a class="btn" href="#projetos">Projetos</a>
+        <a class="btn" href="#experiencia">Experiência</a>
+        <a class="btn" href="#contato">Contato</a>
+        <a class="btn primary" href="https://github.com/AldraxJ" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="badge"><span class="dot"></span>Curitiba/PR • Remoto • Híbrido • Presencial</div>
+
+        <h1>
+          Suporte e soluções para <span class="grad">ambientes de TI e aplicações web</span> —
+          com comunicação clara e foco em resultado.
+        </h1>
+
+        <p class="subtitle">
+          Profissional de TI com atuação em suporte (N2/N3), troubleshooting de redes e sistemas, organização de rotina com ferramentas
+          como CRM/Jira/Slack e interesse contínuo em Segurança da Informação. Também atuo com <b>Web Design</b> e <b>UI/UX no Figma</b>
+          para aplicações web (protótipos, layouts e consistência visual).
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn" href="https://github.com/AldraxJ" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="#contato">Contato</a>
+        </div>
+
+        <div class="quick">
+          <div class="q">
+            <b>Suporte N2/N3</b>
+            <span>Atendimento, incidentes, backoffice e acompanhamento ponta a ponta.</span>
+          </div>
+          <div class="q">
+            <b>Infra & Redes</b>
+            <span>Diagnóstico de conectividade (Wi‑Fi/rede), Windows e boas práticas.</span>
+          </div>
+          <div class="q">
+            <b>Web & UI/UX</b>
+            <span>Figma, prototipação, layouts responsivos e organização de componentes.</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel reveal" aria-label="Resumo rápido">
+        <div class="panel-inner">
+          <div class="minihead">
+            Visão rápida
+            <span class="pill">Portfolio</span>
+          </div>
+
+          <div class="code">
+<pre>$ perfil
+Aldryn Esperança
+
+$ foco
+- Suporte (N2/N3) e infraestrutura
+- Segurança da Informação (em evolução)
+- Web Design e UI/UX (Figma)
+
+$ links
+- LinkedIn: https://www.linkedin.com/in/aldryn-esperan%C3%A7a-4b6353341/
+- GitHub:   https://github.com/AldraxJ
+- E-mail:   aldryn2511@hotmail.com</pre>
+          </div>
+
+          <div class="info-list">
+            <div class="info">
+              <div class="ico">⚡</div>
+              <div>
+                <b>Agilidade com qualidade</b>
+                <span>Diagnóstico estruturado, registro do que foi feito e entrega consistente.</span>
+              </div>
+            </div>
+
+            <div class="info">
+              <div class="ico">🔐</div>
+              <div>
+                <b>Cibersegurança (projeto pessoal)</b>
+                <span>Gerenciador de senhas, monitoramento, firewall, IDS/IPS e alertas DDoS.</span>
+              </div>
+            </div>
+
+            <div class="info">
+              <div class="ico">🎨</div>
+              <div>
+                <b>UI/UX para aplicações web</b>
+                <span>Protótipos no Figma, hierarquia visual, responsividade e padrões modernos.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Sobre -->
+  <section id="sobre">
+    <div class="container">
+      <div class="section-head">
+        <h2>Sobre</h2>
+        <p>Trabalho bem com rotina, priorização e comunicação com usuário — e gosto de resolver a causa raiz, não só o sintoma.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card reveal">
+          <b style="font-size:16px;">Resumo profissional</b>
+          <div class="divider"></div>
+          <p class="muted" style="margin:0; line-height:1.75;">
+            Atuo com suporte ao usuário, infraestrutura e troubleshooting de conectividade/sistemas.
+            Sou organizado com documentação e acompanhamento, e busco evolução contínua em Segurança da Informação (com interesse em governança).
+            Em paralelo, desenvolvo protótipos e interfaces de aplicações web com foco em usabilidade (Figma/UI/UX).
+          </p>
+
+          <div class="tags">
+            <span class="tag blue">Suporte N2/N3</span>
+            <span class="tag blue">Troubleshooting</span>
+            <span class="tag">Windows</span>
+            <span class="tag">Redes</span>
+            <span class="tag">CRM</span>
+            <span class="tag">Jira</span>
+            <span class="tag">Slack</span>
+            <span class="tag">Figma</span>
+            <span class="tag">UI/UX</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <b style="font-size:16px;">Como eu agrego</b>
+          <div class="divider"></div>
+
+          <div class="timeline">
+            <div class="t">
+              <div class="when">Atendimento</div>
+              <div class="what">
+                <b>Clareza e empatia</b>
+                <span>Alinho expectativa, informo status e deixo o usuário seguro do próximo passo.</span>
+              </div>
+            </div>
+
+            <div class="t">
+              <div class="when">Qualidade</div>
+              <div class="what">
+                <b>Registro e padrão</b>
+                <span>Documentação do que foi testado, solução e prevenção (base de conhecimento).</span>
+              </div>
+            </div>
+
+            <div class="t">
+              <div class="when">Produto</div>
+              <div class="what">
+                <b>Visão web</b>
+                <span>Interfaces mais claras: protótipos no Figma, consistência visual e responsividade.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <h2>Competências</h2>
+        <p>O que eu aplico com frequência em suporte, infraestrutura e aplicações web.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="card reveal">
+          <b>Suporte & Atendimento</b>
+          <p class="muted" style="margin:8px 0 0; line-height:1.7;">
+            Helpdesk, atendimento remoto, backoffice, escalonamento, follow-up e orientação ao usuário.
+          </p>
+          <div class="tags">
+            <span class="tag blue">N2/N3</span>
+            <span class="tag">SLA</span>
+            <span class="tag">Incidentes</span>
+            <span class="tag">Field Service</span>
+            <span class="tag">Documentação</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <b>Infra & Redes</b>
+          <p class="muted" style="margin:8px 0 0; line-height:1.7;">
+            Diagnóstico de conectividade (Wi‑Fi/rede), impressoras, CFTV/telefonia e ambientes Windows/Server.
+          </p>
+          <div class="tags">
+            <span class="tag blue">Troubleshooting</span>
+            <span class="tag">TCP/IP</span>
+            <span class="tag">DNS/DHCP</span>
+            <span class="tag">Windows</span>
+            <span class="tag">Backup</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <b>Web Design & UI/UX</b>
+          <p class="muted" style="margin:8px 0 0; line-height:1.7;">
+            Prototipação no Figma, organização de componentes, hierarquia visual, acessibilidade e layout responsivo.
+          </p>
+          <div class="tags">
+            <span class="tag blue">Figma</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">Wireframes</span>
+            <span class="tag">Design System</span>
+            <span class="tag">Responsivo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projetos</h2>
+        <p>Exemplos do que eu desenvolvo e organizo (cibersegurança + UI/UX + web).</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card reveal">
+          <div class="proj-head">
+            <div>
+              <b>Plataforma de Cibersegurança (em desenvolvimento)</b>
+              <div class="proj-meta">Arquitetura modular • segurança aplicada</div>
+            </div>
+            <span class="tag blue">Security</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="muted" style="margin:0; line-height:1.75;">
+            Projeto pessoal com módulos integrados para aumentar proteção e visibilidade do ambiente.
+            Estruturado para evolução contínua e expansão do escopo.
+          </p>
+
+          <div class="tags" style="margin-top:12px;">
+            <span class="tag">Gerenciador de senhas</span>
+            <span class="tag">Monitoramento de rede</span>
+            <span class="tag">Firewall</span>
+            <span class="tag">IDS/IPS</span>
+            <span class="tag">Alertas DDoS</span>
+            <span class="tag">Site de updates</span>
+          </div>
+
+          <div class="proj-actions">
+            <a class="btn" href="https://github.com/AldraxJ" target="_blank" rel="noopener">Ver GitHub</a>
+            <a class="btn" href="#contato">Solicitar detalhes</a>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="proj-head">
+            <div>
+              <b>Protótipos UI/UX para aplicações web</b>
+              <div class="proj-meta">Figma • Fluxos • Componentes</div>
+            </div>
+            <span class="tag blue">UI/UX</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="muted" style="margin:0; line-height:1.75;">
+            Coleção de telas e protótipos com foco em clareza, consistência visual e usabilidade.
+            Estrutura de componentes para acelerar novas páginas e reduzir inconsistências.
+          </p>
+
+          <div class="tags" style="margin-top:12px;">
+            <span class="tag">Wireframes</span>
+            <span class="tag">Prototipação</span>
+            <span class="tag">UI Kit</span>
+            <span class="tag">Acessibilidade</span>
+            <span class="tag">Responsivo</span>
+          </div>
+
+          <div class="proj-actions">
+            <a class="btn" href="#contato">Pedir portfólio de telas</a>
+            <a class="btn" href="https://www.linkedin.com/in/aldryn-esperan%C3%A7a-4b6353341/" target="_blank" rel="noopener">Ver LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="proj-head">
+            <div>
+              <b>Base de Conhecimento (Suporte)</b>
+              <div class="proj-meta">Runbooks • checklists • padrões</div>
+            </div>
+            <span class="tag blue">IT Support</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="muted" style="margin:0; line-height:1.75;">
+            Estrutura de documentação para reduzir recorrência e acelerar resolução:
+            checklist de diagnóstico, padrões de atendimento e artigos por categoria.
+          </p>
+
+          <div class="tags" style="margin-top:12px;">
+            <span class="tag">Runbooks</span>
+            <span class="tag">Checklist</span>
+            <span class="tag">Templates</span>
+            <span class="tag">SLA/Incidentes</span>
+          </div>
+
+          <div class="proj-actions">
+            <a class="btn" href="#contato">Solicitar exemplos</a>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="proj-head">
+            <div>
+              <b>Aplicações Web (layout + estrutura)</b>
+              <div class="proj-meta">Páginas profissionais • UI limpa</div>
+            </div>
+            <span class="tag blue">Web</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="muted" style="margin:0; line-height:1.75;">
+            Páginas responsivas, componentes reutilizáveis e foco em legibilidade.
+            Ideal para dashboards internos, páginas de login, áreas administrativas e portais.
+          </p>
+
+          <div class="tags" style="margin-top:12px;">
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">Responsivo</span>
+            <span class="tag">Componentes</span>
+            <span class="tag">UX</span>
+          </div>
+
+          <div class="proj-actions">
+            <a class="btn" href="https://github.com/AldraxJ" target="_blank" rel="noopener">Ver GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiência -->
+  <section id="experiencia">
+    <div class="container">
+      <div class="section-head">
+        <h2>Experiência</h2>
+        <p>Resumo objetivo do que eu já faço/entrego (modelo pronto para empresa).</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="timeline">
+          <div class="t">
+            <div class="when">Atual</div>
+            <div class="what">
+              <b>Suporte de TI / Infra (N2/N3)</b>
+              <span>
+                Atendimento ao usuário, gestão de incidentes, suporte remoto, troubleshooting de rede e sistemas, organização do fluxo
+                e documentação do processo para reduzir recorrência.
+              </span>
+            </div>
+          </div>
+
+          <div class="t">
+            <div class="when">Anterior</div>
+            <div class="what">
+              <b>Field Service / Suporte Técnico</b>
+              <span>
+                Instalação, manutenção e configuração de equipamentos/serviços: rede cabeada e Wi‑Fi, impressoras, CFTV, telefonia,
+                sistemas Windows e rotina de backup/antivírus.
+              </span>
+            </div>
+          </div>
+
+          <div class="t">
+            <div class="when">Projetos</div>
+            <div class="what">
+              <b>Web Design / UI/UX (Figma)</b>
+              <span>
+                Protótipos, organização de componentes, melhorias de experiência do usuário e estrutura visual para aplicações web
+                (clareza, acessibilidade e responsividade).
+              </span>
+            </div>
+          </div>
+
+          <div class="t">
+            <div class="when">Ferramentas</div>
+            <div class="what">
+              <b>CRM • Jira • Slack</b>
+              <span>Rotina com chamados, prioridades, comunicação e acompanhamento de ponta a ponta.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contato</h2>
+        <p>Pronto para enviar: links e contato direto.</p>
+      </div>
+
+      <div class="contact">
+        <div class="card reveal">
+          <b style="font-size:16px;">Me encontre</b>
+          <div class="divider"></div>
+
+          <div class="info-list">
+            <div class="info">
+              <div class="ico">📧</div>
+              <div>
+                <b>E-mail</b>
+                <span><a href="mailto:aldryn2511@hotmail.com" style="color:var(--text);text-decoration:underline;text-decoration-color:rgba(78,163,255,.55);">aldryn2511@hotmail.com</a></span>
+              </div>
+            </div>
+
+            <div class="info">
+              <div class="ico">💼</div>
+              <div>
+                <b>LinkedIn</b>
+                <span><a href="https://www.linkedin.com/in/aldryn-esperan%C3%A7a-4b6353341/" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-decoration-color:rgba(78,163,255,.55);">https://www.linkedin.com/in/aldryn-esperan%C3%A7a-4b6353341/</a></span>
+              </div>
+            </div>
+
+            <div class="info">
+              <div class="ico">🐙</div>
+              <div>
+                <b>GitHub</b>
+                <span><a href="https://github.com/AldraxJ" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-decoration-color:rgba(78,163,255,.55);">https://github.com/AldraxJ</a></span>
+              </div>
+            </div>
+
+            <div class="info">
+              <div class="ico">📍</div>
+              <div>
+                <b>Local</b>
+                <span>Curitiba/PR • Remoto • Híbrido • Presencial</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-actions" style="margin-top:14px;">
+            <a class="btn primary" href="https://www.linkedin.com/in/aldryn-esperan%C3%A7a-4b6353341/" target="_blank" rel="noopener">Mensagem no LinkedIn</a>
+            <a class="btn" href="mailto:aldryn2511@hotmail.com?subject=Aldryn Esperança%20-%20Contato%20via%20Portf%C3%B3lio">Enviar e-mail</a>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <b style="font-size:16px;">Mensagem rápida (e-mail)</b>
+          <div class="divider"></div>
+
+          <p class="muted" style="margin:0 0 12px; line-height:1.7;">
+            Este formulário abre o seu cliente de e-mail com uma mensagem pronta (sem backend).
+          </p>
+
+          <form id="contactForm" novalidate>
+            <input id="fromName" name="fromName" placeholder="Seu nome" autocomplete="name" required />
+            <input id="subject" name="subject" placeholder="Assunto" required />
+            <textarea id="message" name="message" placeholder="Mensagem" required></textarea>
+            <button class="btn primary" type="submit">Enviar</button>
+          </form>
+
+          <p class="muted" style="margin:10px 0 0; font-size:12px; color: var(--muted2);">
+            Dica: se sua empresa bloquear mailto, use o botão “Mensagem no LinkedIn”.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <b style="color:var(--text);">Aldryn Esperança</b>
+        <div style="margin-top:6px;">© 2026 • Portfólio (tema escuro / azul) • Curitiba/PR</div>
+      </div>
+
+      <div class="f-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+        <a href="https://www.linkedin.com/in/aldryn-esperan%C3%A7a-4b6353341/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/AldraxJ" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // Helpers
+    const $ = (q) => document.querySelector(q);
+
+    function toast(msg) {
+      const el = $("#toast");
+      if (!el) return;
+      el.textContent = msg;
+      el.style.display = "block";
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => el.style.display = "none", 2600);
+    }
+
+    // Smooth anchor scroll
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const id = a.getAttribute("href");
+      if (!id || id.length <= 1) return;
+
+      const target = document.querySelector(id);
+      if (!target) return;
+
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      const m = $("#mobileMenu");
+      if (m) m.style.display = "none";
+    });
+
+    // Reveal on scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) en.target.classList.add("show");
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+
+    // Mobile menu
+    const menuBtn = $("#menuBtn");
+    const mobileMenu = $("#mobileMenu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.style.display = (mobileMenu.style.display === "block") ? "none" : "block";
+      });
+    }
+
+    // Copy email
+    const EMAIL = "aldryn2511@hotmail.com";
+    const copyBtn = $("#copyEmailBtn");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(EMAIL);
+          toast("E-mail copiado: " + EMAIL);
+        } catch (err) {
+          toast("Não consegui copiar automaticamente. Copie: " + EMAIL);
+        }
+      });
+    }
+
+    // Contact form -> mailto
+    const form = $("#contactForm");
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fromName = ($("#fromName")?.value || "").trim();
+        const subject = ($("#subject")?.value || "").trim();
+        const message = ($("#message")?.value || "").trim();
+
+        if (!fromName || !subject || !message) {
+          toast("Preencha nome, assunto e mensagem.");
+          return;
+        }
+
+        const body = `Olá Aldryn Esperança, aqui é ${fromName}.\n\n${message}\n\n— Enviado pelo seu portfólio.`;
+        const mailto = `mailto:aldryn2511@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+      });
+    }
+  </script>
+</body>
+</html>
